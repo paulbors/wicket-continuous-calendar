@@ -33,15 +33,40 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jacksonVersion>2.0.5</jacksonVersion>
+    <javaVersion>1.6</javaVersion>
     <junitVersion>4.10</junitVersion>
     <wicketVersion>1.5.8</wicketVersion>
   </properties>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/java/</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+      <resource>
+        <directory>src/main/resources/</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings 
-            only. It has no influence on the Maven build itself. -->
-        <plugin>
+	    <plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-compiler-plugin</artifactId>
+	      <version>2.3.2</version>
+	      <configuration>
+	        <source>${javaVersion}</source>
+	        <target>${javaVersion}</target>
+	      </configuration>
+	    </plugin>
+	    <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
           <version>1.0.0</version>
@@ -50,15 +75,16 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <versionRange>[2.5,)</versionRange>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
                     <goals>
-                      <goal>resources</goal>
+                      <goal>format</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <execute>
+                      <runOnIncremental>true</runOnIncremental>
+                    </execute>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -74,6 +100,14 @@
               <include>src/main/java/**/*.java</include>
             </includes>
           </configuration>
+          <executions>
+            <execution>
+              <phase>validate</phase>
+              <goals>
+                <goal>format</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

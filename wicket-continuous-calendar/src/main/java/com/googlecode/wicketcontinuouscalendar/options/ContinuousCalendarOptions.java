@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012-2013 Wicket Continuous Calendar (http://Wicket-Continuous-Calendar.GoogleCode.com/)
+ *   Copyright (C) 2013 Wicket Continuous Calendar (http://Wicket-Continuous-Calendar.GoogleCode.com/)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-
 package com.googlecode.wicketcontinuouscalendar.options;
 
 import java.io.Serializable;
@@ -31,7 +30,7 @@ import java.io.Serializable;
  * @see <a href="http://reaktor.github.com/jquery-continuous-calendar/site/playground.html">jQuery-Continuous-Calendar Playground</a>
  * @author Paul Bors (Paul@Bors.ws)
  */
-public class Options implements Serializable {
+public class ContinuousCalendarOptions implements Serializable {
     private static final long serialVersionUID = 1L;
     
     private Integer weeksBefore;

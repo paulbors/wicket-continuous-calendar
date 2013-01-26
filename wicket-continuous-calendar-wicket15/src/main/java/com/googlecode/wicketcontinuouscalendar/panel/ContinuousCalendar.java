@@ -1,5 +1,5 @@
 /**
- *   Copyright 2012 Wicket Continuous Calendar (http://Wicket-Continuous-Calendar.GoogleCode.com/)
+ *   Copyright (C) 2013 Wicket Continuous Calendar (http://Wicket-Continuous-Calendar.GoogleCode.com/)
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -12,24 +12,23 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-
 package com.googlecode.wicketcontinuouscalendar.panel;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
 
 import com.googlecode.wicketcontinuouscalendar.ContinuousCalendarBehavior;
-import com.googlecode.wicketcontinuouscalendar.options.Options;
+import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions;
 
 public class ContinuousCalendar extends WebMarkupContainer {
     private static final long serialVersionUID = 1L;
     
-    public ContinuousCalendar(String id, IModel<Options> model) {
+    public ContinuousCalendar(String id, IModel<ContinuousCalendarOptions> model) {
         super(id, model);
         add(new ContinuousCalendarBehavior(this));
     }
     
-    public Options getOptions() {
-        return (Options)getDefaultModel().getObject();
+    public ContinuousCalendarOptions getOptions() {
+        return (ContinuousCalendarOptions)getDefaultModel().getObject();
     }   
 }
