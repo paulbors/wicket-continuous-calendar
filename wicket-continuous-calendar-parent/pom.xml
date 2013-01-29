@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
   <artifactId>wicket-continuous-calendar-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Wicket jquery-continuous-calendar parent</name>
   <description>jQuery-Continuous-Calendar integrated with Wicket</description>
