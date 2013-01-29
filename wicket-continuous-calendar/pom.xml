@@ -26,6 +26,7 @@
   <scm>
     <url>http://code.google.com/p/wicket-continuous-calendar/source/browse</url>
     <connection>scm:git:https://code.google.com/p/wicket-continuous-calendar/</connection>
+    <developerConnection>scm:git:https://code.google.com/p/wicket-continuous-calendar/</developerConnection>
   </scm>
   <issueManagement>
     <url>http://code.google.com/p/wicket-continuous-calendar/issues/list</url>
