@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 */
 public class ContinuousCalendarJacksonModule extends SimpleModule {
     public ContinuousCalendarJacksonModule() {
-        super("wicked-charts", new Version(
+        super("wicket-continuous-calendar", new Version(
             1, 0, 0, null, "com.googlecode.wicket-continuous-calendar", "wicket-continuous-calendar")
         );
     }

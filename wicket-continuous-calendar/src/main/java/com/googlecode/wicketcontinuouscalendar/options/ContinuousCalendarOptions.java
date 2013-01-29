@@ -33,22 +33,22 @@ import java.io.Serializable;
 public class ContinuousCalendarOptions implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private Integer weeksBefore;
-    private Integer weeksAfter;
-    private String  firstDate;
-    private String  lastDate;
-    private String  startField;
-    private String  endField;
-    private Boolean isPopup;
-    private Boolean selectToday;
-    //private Locale  locale;
-    private Boolean disableWeekends;
-    private String  disabledDates;
-    private Integer minimumRange;
-    private Boolean selectWeek;
-    private Integer fadeOutDuration;
-    private String  callback;
-    private String  theme;
+    private Integer     weeksBefore;
+    private Integer     weeksAfter;
+    private String      firstDate;
+    private String      lastDate;
+    private String      startField;
+    private String      endField;
+    private Boolean     isPopup;
+    private Boolean     selectToday;
+    //private Locale    locale;
+    private Boolean     disableWeekends;
+    private String      disabledDates;
+    private Integer     minimumRange;
+    private Boolean     selectWeek;
+    private Integer     fadeOutDuration;
+    private Function    callback;
+    private String      theme;
     
     /** Specifies amount of weeks displayed before selection. If no default selection then count from current day. */
     public Integer getWeeksBefore() {
@@ -168,11 +168,11 @@ public class ContinuousCalendarOptions implements Serializable {
     }
     
     /** Function called in init and after date selection. DateRange or Date is passed as argument and this points to calendar container. */
-    public String getCallback() {
+    public Function getCallback() {
         return callback;
     }
     /** Function called in init and after date selection. DateRange or Date is passed as argument and this points to calendar container. */
-    public void setCallback(String callback) {
+    public void setCallback(Function callback) {
         this.callback = callback;
     }
     

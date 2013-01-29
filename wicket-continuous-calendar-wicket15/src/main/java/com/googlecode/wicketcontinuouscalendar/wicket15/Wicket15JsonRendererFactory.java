@@ -51,10 +51,9 @@ public class Wicket15JsonRendererFactory {
 	}
 
 	/**
-	 * This method creates a {@link JsonRenderer} that is configured for Wicket
-	 * 1.5.x.
+	 * This method creates a {@link JsonRenderer} that is configured for Wicket 1.5.x.
 	 * 
-	 * @return
+	 * @return {@link JsonRenderer}
 	 */
 	private JsonRenderer createWicket15JsonRenderer() {
 		return new JsonRenderer();

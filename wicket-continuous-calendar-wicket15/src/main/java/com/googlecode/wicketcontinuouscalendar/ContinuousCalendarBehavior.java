@@ -42,8 +42,8 @@ public class ContinuousCalendarBehavior extends Behavior {
 	/**
 	 * Constructor.
 	 * 
-	 * @param options
-	 *          the options for the calendar. The {@link ContinuousCalendarOptions} class is very
+	 * @param continuousCalendar
+	 *          The {@link ContinuousCalendar} along with its {@link ContinuousCalendarOptions} model object that
 	 *          similar in structure to the jQuery-Continuous-Calendar API reference.
 	 * @see <a href="http://reaktor.github.com/jquery-continuous-calendar/index.html#api_documentation">jQuery-Continuous-Calendar API</a>
 	 */
@@ -54,36 +54,33 @@ public class ContinuousCalendarBehavior extends Behavior {
 	@Override
 	public void renderHead(final Component component, final IHeaderResponse response) {
 		component.setOutputMarkupId(true);
-		ContinuousCalendarOptions options = this.continuousCalendar.getOptions();
-		final String id = component.getMarkupId();
 		JsonRenderer renderer = Wicket15JsonRendererFactory.getInstance().getRenderer();
-		includeJavascriptDependencies(response, options);
-		includeCalendarJavascript(response, options, renderer, id);
+		includeJavascriptDependencies(response);
+		includeCalendarJavascript(response, renderer, component.getMarkupId());
 	}
 	
 	/**
-     * Includes the javascript that calls the jQuery-Continuous-Calendar library to visualize the calendar.
+     * Includes the JavaScript that calls the jQuery-Continuous-Calendar library to visualize the calendar.
      * 
      * @param response
      *          the Wicket HeaderResponse
      * @param options
-     *          the options containing the settings for the calenar to display
+     *          the options containing the settings for the calendar to display
      * @param renderer
      *          the JsonRenderer responsible for rendering the options
      * @param markupId
      *          the DOM ID of the chart component.
      */
-    protected void includeCalendarJavascript(final IHeaderResponse response,
-        final ContinuousCalendarOptions options, final JsonRenderer renderer, final String markupId) {
-        String calendarVarname = markupId;
-        response.renderOnDomReadyJavaScript(
+	private void includeCalendarJavascript(final IHeaderResponse response, final JsonRenderer renderer, final String markupId) {
+	    ContinuousCalendarOptions options = continuousCalendar.getOptions();
+	    response.renderOnDomReadyJavaScript(
             MessageFormat.format(
-                "$({0}).continuousCalendar({1});", calendarVarname, renderer.toJson(options)
+                "$({0}).continuousCalendar({1})", markupId, renderer.toJson(options)
             )
         );
     }
     
-    private void includeJavascriptDependencies(final IHeaderResponse response, final ContinuousCalendarOptions options) {
+    protected void includeJavascriptDependencies(final IHeaderResponse response) {
         ResourceRegistry.getInstance().getJQueryEntry().addToHeaderResponse(response);
         ResourceRegistry.getInstance().getContinuousCalendarEntry().addToHeaderResponse(response);
         ResourceRegistry.getInstance().getContinuousCalendarCssEntry().addToHeaderResponse(response);

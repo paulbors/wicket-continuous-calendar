@@ -14,12 +14,22 @@
  */
 package com.googlecode.wicketcontinuouscalendar.panel;
 
+import org.apache.wicket.WicketRuntimeException;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
 
 import com.googlecode.wicketcontinuouscalendar.ContinuousCalendarBehavior;
 import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions;
 
+/**
+ * {@link WebMarkupContainer} as a place holder for the <i>jQuery-Continuous-Calendar</i> which must be a <strong>DIV</strong>.
+ * <p>
+ * Use {@link ContinuousCalendarPanel} if you'd like a {@link Panel} instead.
+ * 
+ * @see ContinuousCalendarOptions Options for the calendar
+ * @author Paul Bors (Paul@Bors.ws)
+ */
 public class ContinuousCalendar extends WebMarkupContainer {
     private static final long serialVersionUID = 1L;
     
@@ -30,5 +40,24 @@ public class ContinuousCalendar extends WebMarkupContainer {
     
     public ContinuousCalendarOptions getOptions() {
         return (ContinuousCalendarOptions)getDefaultModel().getObject();
-    }   
+    }
+    
+    /**
+     * Handles this calendar's tag. OVERRIDES MUST CALL SUPER.
+     * 
+     * @param tag
+     *            the component tag
+     * @see org.apache.wicket.Component#onComponentTag(ComponentTag)
+     */
+    @Override
+    protected void onComponentTag(final ComponentTag tag) {
+        // Default handling for tag
+        super.onComponentTag(tag);
+        
+        // Force the tag to be a DIV
+        if( !tag.getName().equalsIgnoreCase("div") )  {
+            throw new WicketRuntimeException("a jQuery-Continuous-Calendar component was set on " + this +
+                " but it has to be attached to a DIV tag");
+        }
+    }
 }

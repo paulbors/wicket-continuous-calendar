@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.googlecode.wicketcontinuouscalendar.options.Function;
 
 /**
  * A renderer for rendering jQueryContinuousCalendar options into JSON objects based on the
@@ -40,9 +41,10 @@ public class JsonRenderer {
 
 	public JsonRenderer() {
 		this.jacksonModule = new ContinuousCalendarJacksonModule();
+		this.jacksonModule.addSerializer(Function.class, new FunctionSerializer());
 		this.jacksonMapper = createJacksonMapper();
 	}
-
+	
 	/**
 	 * This method gives the opportunity to add a custom serializer to serializer
 	 * one of the ContinuousCalendar option classes. It may be necessary to serialize
@@ -77,8 +79,8 @@ public class JsonRenderer {
 		try {
 			return this.jacksonMapper.writeValueAsString(object);
 		} catch (Exception e) {
-			throw new RuntimeException("Error trying to serialize object of type " + object.getClass().getName()
-			    + " into JSON!", e);
+			throw new RuntimeException("Error trying to serialize object of type " +
+			    object.getClass().getName() + " into JSON!", e);
 		}
 	}
 }
