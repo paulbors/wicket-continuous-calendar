@@ -24,13 +24,21 @@ import com.googlecode.wicketcontinuouscalendar.jackson.JsonRenderer;
  * 
  */
 public class Wicket15JsonRendererFactory {
-
-	private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
-
 	private static JsonRenderer RENDERER;
-
+	
+	/** Applied <a href="http://en.wikipedia.org/wiki/Initialization_on_demand_holder_idiom">initialization on demand holder idiom</a>
+	 * thanks to <a href="http://www.linkedin.com/profile/view?id=15730700">Martin Grigorov</a>.
+	 * 
+	 * @see Wicket-users mailing list archives announcement for
+	 * <a href="http://mail-archives.apache.org/mod_mbox/wicket-users/201301.mbox/%3CC5A4DD21-D941-40E2-BD01-D9471C4CB5B9@Bors.ws%3E">
+	   Introducing wicket-continuous-calendar</a>
+	 */
+	private static class LazyHolder {
+	    private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
+	}
+	
 	public static Wicket15JsonRendererFactory getInstance() {
-		return INSTANCE;
+		return LazyHolder.INSTANCE;
 	}
 
 	private Wicket15JsonRendererFactory() {

@@ -15,6 +15,7 @@
 package com.googlecode.wicketcontinuouscalendar.wicket15;
 
 import org.apache.wicket.markup.html.IHeaderResponse;
+import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.request.resource.ResourceReference;
 
 /**
@@ -26,42 +27,42 @@ import org.apache.wicket.request.resource.ResourceReference;
  * @author Paul Bors (Paul@Bors.ws)
  */
 public class ResourceRegistry {
-    public enum Type {
-        JS, CSS
-    }
     
     public class RegistryEntry {
-        private Type type;
         private String url;
         private ResourceReference reference;
 
-        public RegistryEntry(final Type type, final ResourceReference reference) {
-            this.type = type;
+        public RegistryEntry(final ResourceReference reference) {
+            this.url = null;
             this.reference = reference;
         }
 
-        public RegistryEntry(final Type type, final String url) {
-            this.type = type;
+        public RegistryEntry(final String url) {
             this.url = url;
+            this.reference = null;
         }
 
         public void addToHeaderResponse(final IHeaderResponse response) {
             if(this.url != null) {
-                if(type == Type.JS) {
+                if(url.toLowerCase().endsWith(".css")) {
+                    response.renderCSSReference(this.url);
+                } else if(url.toLowerCase().endsWith(".js")) {
                     response.renderJavaScriptReference(this.url);
                 } else {
-                    response.renderCSSReference(this.url);
+                    throw new IllegalStateException(
+                        "Only CSS or JS types are accepted for the RegistryEntry types!"
+                    );
                 }
             } else if(this.reference != null) {
-                if(type == Type.JS) {
+                if(reference.getExtension().toLowerCase().endsWith("css")) {
+                    response.renderCSSReference(this.reference);
+                } else if(reference.getExtension().toLowerCase().endsWith("js")) {
                     response.renderJavaScriptReference(this.reference);
                 } else {
-                    response.renderCSSReference(this.reference);
+                    throw new IllegalStateException(
+                        "Only CSS or JS types are accepted for the RegistryEntry types!"
+                    );
                 }
-            } else {
-                throw new IllegalStateException(
-                    "A RegistryEntry must have at least a non-null url or a non-null reference!"
-                );
             }
         }
     }
@@ -78,10 +79,10 @@ public class ResourceRegistry {
         return INSTANCE;
     }
 
-    private RegistryEntry jqueryEntry = new RegistryEntry(Type.JS, DEFAULT_JQUERY_URL);
-    private RegistryEntry continuousCalendarEntry = new RegistryEntry(Type.JS, DEFAULT_CONTINUOUS_CALENDAR_JQUERY_URL);
-    private RegistryEntry continuousCalendarCssEntry = new RegistryEntry(Type.CSS, DEFAULT_CONTINUOUS_CALENDAR_CSS_URL);
-    private RegistryEntry continuousCalendarCssThemeRoundEntry = new RegistryEntry(Type.CSS, DEFAULT_CONTINUOUS_CALENDAR_CSS_THEME_ROUND_URL);
+    private RegistryEntry jqueryEntry = new RegistryEntry(DEFAULT_JQUERY_URL);
+    private RegistryEntry continuousCalendarEntry = new RegistryEntry(DEFAULT_CONTINUOUS_CALENDAR_JQUERY_URL);
+    private RegistryEntry continuousCalendarCssEntry = new RegistryEntry(DEFAULT_CONTINUOUS_CALENDAR_CSS_URL);
+    private RegistryEntry continuousCalendarCssThemeRoundEntry = new RegistryEntry(DEFAULT_CONTINUOUS_CALENDAR_CSS_THEME_ROUND_URL);
 
     private static ResourceRegistry INSTANCE;
 
@@ -109,67 +110,83 @@ public class ResourceRegistry {
      * Sets the {@link ResourceReference} to use to load the jQuery-Continuous-Calendar
      * library (jquery.continuousCalendar-latest.js). Use this method if you want
      * to include the javascript file in your web application.
+     * <p>
+     * Set it to <code>null</code> not to include it (not advised!).
      */
-    public void setContinuousCalendarReference(final ResourceReference reference) {
-        this.continuousCalendarEntry = new RegistryEntry(Type.JS, reference);
+    public void setContinuousCalendarReference(final PackageResourceReference reference) {
+        this.continuousCalendarEntry = new RegistryEntry(reference);
     }
     /**
      * Sets the URL to use to load the jQuery-Continuous-Calendar
      * library (jquery.continuousCalendar-latest.js). Use this method if you want
      * to include the javascript file in your web application.
+     * <p>
+     * Set it to <code>null</code> not to include it (not advised!).
      */
     public void setContinuousCalendarReference(final String url) {
-        this.continuousCalendarEntry = new RegistryEntry(Type.JS, url);
+        this.continuousCalendarEntry = new RegistryEntry(url);
     }
 
     /**
      * Sets the {@link ResourceReference} to use to load the jQuery-Continuous-Calendar
      * CSS (jquery.continuousCalendar-latest.css). Use this method if you want
      * to include the javascript file in your web application.
+     * <p>
+     * Set it to <code>null</code> not to include it (not advised!).
      */
-    public void setContinuousCalendarCssReference(final ResourceReference reference) {
-        this.continuousCalendarCssEntry = new RegistryEntry(Type.CSS, reference);
+    public void setContinuousCalendarCssReference(final PackageResourceReference reference) {
+        this.continuousCalendarCssEntry = new RegistryEntry(reference);
     }
     /**
      * Sets the URL to use to load the jQuery-Continuous-Calendar
      * CSS (jquery.continuousCalendar-latest.css). Use this method if you want
      * to include the javascript file in your web application.
+     * <p>
+     * Set it to <code>null</code> not to include it (not advised!).
      */
     public void setContinuousCalendarCssReference(final String url) {
-        this.continuousCalendarCssEntry = new RegistryEntry(Type.CSS, url);
+        this.continuousCalendarCssEntry = new RegistryEntry(url);
     }
 
     /**
      * Sets the {@link ResourceReference} to use to load the jQuery-Continuous-Calendar
      * CSS round theme (theme.rounded.css). Use this method if you want to
      * include the javascript file in your web application.
+     * <p>
+     * Set it to <code>null</code> not to include it (if you don't use this theme).
      */
-    public void setContinuousCalendarCssThemeRoundReference(final ResourceReference reference) {
-        this.continuousCalendarCssThemeRoundEntry = new RegistryEntry(Type.CSS, reference);
+    public void setContinuousCalendarCssThemeRoundReference(final PackageResourceReference reference) {
+        this.continuousCalendarCssThemeRoundEntry = new RegistryEntry(reference);
     }
     /**
      * Sets the URL to use to load the jQuery-Continuous-Calendar CSS round theme
      * (theme.rounded.css). Use this method if you want to load the javascript file
      * from an external URL.
+     * <p>
+     * Set it to <code>null</code> not to include it (if you don't use this theme).
      */
     public void setContinuousCalendarCssThemeRoundReference(final String url) {
-        this.continuousCalendarCssThemeRoundEntry = new RegistryEntry(Type.CSS, url);
+        this.continuousCalendarCssThemeRoundEntry = new RegistryEntry(url);
     }
 
     /**
      * Sets the {@link ResourceReference} to use to load JQuery (jquery.js).Use
      * this method if you want to include the javascript file in your web
      * application.
+     * <p>
+     * Set it to <code>null</code> not to include it (if you manage your own jQuery library).
      */
-    public void setJQueryReference(final ResourceReference reference) {
-        this.jqueryEntry = new RegistryEntry(Type.JS, reference);
+    public void setJQueryReference(final PackageResourceReference reference) {
+        this.jqueryEntry = new RegistryEntry(reference);
     }
     /**
      * Sets the URL to use to load JQuery (jquery.js). Use this method if you
      * want to load the javascript file from an external URL.
+     * <p>
+     * Set it to <code>null</code> not to include it (if you manage your own jQuery library).
      */
     public void setJQueryReference(final String url) {
-        this.jqueryEntry = new RegistryEntry(Type.JS, url);
+        this.jqueryEntry = new RegistryEntry(url);
     }
 
 }

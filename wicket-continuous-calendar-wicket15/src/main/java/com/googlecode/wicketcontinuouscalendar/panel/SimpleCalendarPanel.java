@@ -28,7 +28,7 @@ import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions
  * {@link Panel} holding on to the {@link ContinuousCalendar} as well as the two {@link DateTextField}
  * for the user selection date range. By default those are hidden and a date range label in shown.
  * <p>
- * Use the following CSS to hide the labels and show the two {@link DateTextField}s:<br>
+ * Use a {@link TimeframeCalendarPanel} or the following CSS to hide the labels and show the two {@link DateTextField}s:<br>
  * <code>
  * &#x002F;* Hide the date range labels. *&#x002F;<br>
  * .continuousCalendarContainer div.label span.clickable {<br>
@@ -43,24 +43,54 @@ import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions
  * @see ContinuousCalendarOptions Options for the calendar
  * @author Paul Bors (Paul@Bors.ws)
  */
-public class ContinuousCalendarPanel extends Panel {
+public class SimpleCalendarPanel extends Panel {
     private static final long serialVersionUID = 1L;
     
-    public ContinuousCalendarPanel(String id, IModel<ContinuousCalendarOptions> optionsModel,
+    private DateTextField startDateTextField;
+    private DateTextField endDateTextField;
+    
+    /**
+     * {@link Panel} holding on to the {@link ContinuousCalendar} as well as the two {@link DateTextField}
+     * for the user selection date range. By default those are hidden and a date range label in shown.
+     * 
+     * @param id                Wicket {@link Component} ID
+     * @param optionsModel      {@link IModel} for the {@link ContinuousCalendarOptions}
+     * @param startDateModel    {@link IModel} for the <code>From</code> hidden {@link DateTextField} and visible label
+     * @param endDateModel      {@link IModel} for the <code>To</code> hidden {@link DateTextField} and visible label
+     */
+    public SimpleCalendarPanel(String id, IModel<ContinuousCalendarOptions> optionsModel,
             IModel<Date> startDateModel, IModel<Date> endDateModel) {
         super(id);
         ContinuousCalendar continuousCalendar = new ContinuousCalendar("continuousCalendar", optionsModel);
         add(continuousCalendar);
         
-        DateTextField startDateTextField = DateTextField.withConverter(
+        startDateTextField = DateTextField.withConverter(
             "startDate", startDateModel, getDateConverter()
         );
         continuousCalendar.add(startDateTextField);
         
-        DateTextField endDateTextField = DateTextField.withConverter(
+        endDateTextField = DateTextField.withConverter(
             "endDate", endDateModel, getDateConverter()
         );
         continuousCalendar.add(endDateTextField);
+    }
+    
+    /**
+     * {@link DateTextField} used by the continuous calendar. Use this reference if you need to add additional behaviors.
+     * 
+     * @return {@link DateTextField} used for the start date range of the user, the <b>From</b> field.
+     */
+    public DateTextField getStartDateTextField() {
+        return startDateTextField;
+    }
+    
+    /**
+     * {@link DateTextField} used by the continuous calendar. Use this reference if you need to add additional behaviors.
+     * 
+     * @return {@link DateTextField} used for the end date range of the user, the <b>To</b> field.
+     */
+    public DateTextField getEndDateTextField() {
+        return endDateTextField;
     }
     
     /**

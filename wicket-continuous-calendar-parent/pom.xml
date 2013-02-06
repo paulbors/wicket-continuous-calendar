@@ -3,17 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
   <artifactId>wicket-continuous-calendar-parent</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>pom</packaging>
   <name>Wicket jquery-continuous-calendar parent</name>
   <description>jQuery-Continuous-Calendar integrated with Wicket</description>
   <url>http://Wicket-Continuous-Calendar.GoogleCode.com/</url>
   <inceptionYear>2013</inceptionYear>
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -41,7 +36,7 @@
     <jacksonVersion>2.0.5</jacksonVersion>
     <javaVersion>1.6</javaVersion>
     <junitVersion>4.10</junitVersion>
-    <wicketVersion>1.5.8</wicketVersion>
+    <wicketVersion>1.5.9</wicketVersion>
   </properties>
   <build>
     <resources>

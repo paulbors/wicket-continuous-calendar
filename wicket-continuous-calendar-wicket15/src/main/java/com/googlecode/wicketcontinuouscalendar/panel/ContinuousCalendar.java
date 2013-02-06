@@ -25,7 +25,7 @@ import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions
 /**
  * {@link WebMarkupContainer} as a place holder for the <i>jQuery-Continuous-Calendar</i> which must be a <strong>DIV</strong>.
  * <p>
- * Use {@link ContinuousCalendarPanel} if you'd like a {@link Panel} instead.
+ * Use {@link SimpleCalendarPanel} if you'd like a {@link Panel} instead.
  * 
  * @see ContinuousCalendarOptions Options for the calendar
  * @author Paul Bors (Paul@Bors.ws)
@@ -56,7 +56,7 @@ public class ContinuousCalendar extends WebMarkupContainer {
         
         // Force the tag to be a DIV
         if( !tag.getName().equalsIgnoreCase("div") )  {
-            throw new WicketRuntimeException("a jQuery-Continuous-Calendar component was set on " + this +
+            throw new WicketRuntimeException("a jQuery-Continuous-Calendar component was set on " + tag.getName() +
                 " but it has to be attached to a DIV tag");
         }
     }
