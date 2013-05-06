@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wicketcontinuouscalendar.panel;
+package com.googlecode.wicketcontinuouscalendar.wicket15.panel;
 
 import java.util.Date;
 

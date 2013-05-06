@@ -12,15 +12,15 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wicketcontinuouscalendar.panel;
+package com.googlecode.wicketcontinuouscalendar.wicket15;
 
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
 
-import com.googlecode.wicketcontinuouscalendar.ContinuousCalendarBehavior;
 import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions;
+import com.googlecode.wicketcontinuouscalendar.wicket15.panel.SimpleCalendarPanel;
 
 /**
  * {@link WebMarkupContainer} as a place holder for the <i>jQuery-Continuous-Calendar</i> which must be a <strong>DIV</strong>.

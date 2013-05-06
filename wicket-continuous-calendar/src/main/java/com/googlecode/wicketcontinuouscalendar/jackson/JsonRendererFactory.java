@@ -12,9 +12,8 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wicketcontinuouscalendar.wicket15;
+package com.googlecode.wicketcontinuouscalendar.jackson;
 
-import com.googlecode.wicketcontinuouscalendar.jackson.JsonRenderer;
 
 /**
  * Factory class responsible for creating a {@link JsonRenderer} instance that
@@ -23,7 +22,7 @@ import com.googlecode.wicketcontinuouscalendar.jackson.JsonRenderer;
  * @author Paul Bors (Paul@Bors.ws)
  * 
  */
-public class Wicket15JsonRendererFactory {
+public class JsonRendererFactory {
 	private static JsonRenderer RENDERER;
 	
 	/** Applied <a href="http://en.wikipedia.org/wiki/Initialization_on_demand_holder_idiom">initialization on demand holder idiom</a>
@@ -34,14 +33,14 @@ public class Wicket15JsonRendererFactory {
 	   Introducing wicket-continuous-calendar</a>
 	 */
 	private static class LazyHolder {
-	    private static final Wicket15JsonRendererFactory INSTANCE = new Wicket15JsonRendererFactory();
+	    private static final JsonRendererFactory INSTANCE = new JsonRendererFactory();
 	}
 	
-	public static Wicket15JsonRendererFactory getInstance() {
+	public static JsonRendererFactory getInstance() {
 		return LazyHolder.INSTANCE;
 	}
 
-	private Wicket15JsonRendererFactory() {
+	private JsonRendererFactory() {
 
 	}
 
@@ -53,7 +52,7 @@ public class Wicket15JsonRendererFactory {
 	 */
 	public JsonRenderer getRenderer() {
 		if (RENDERER == null) {
-			RENDERER = createWicket15JsonRenderer();
+			RENDERER = createJsonRenderer();
 		}
 		return RENDERER;
 	}
@@ -63,7 +62,7 @@ public class Wicket15JsonRendererFactory {
 	 * 
 	 * @return {@link JsonRenderer}
 	 */
-	private JsonRenderer createWicket15JsonRenderer() {
+	private JsonRenderer createJsonRenderer() {
 		return new JsonRenderer();
 	}
 

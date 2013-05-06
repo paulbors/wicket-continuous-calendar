@@ -12,7 +12,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.googlecode.wicketcontinuouscalendar.panel;
+package com.googlecode.wicketcontinuouscalendar.wicket6.panel;
 
 import java.util.Date;
 
@@ -23,6 +23,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.IModel;
 
 import com.googlecode.wicketcontinuouscalendar.options.ContinuousCalendarOptions;
+import com.googlecode.wicketcontinuouscalendar.wicket6.ContinuousCalendar;
 
 /**
  * {@link Panel} holding on to the {@link ContinuousCalendar} as well as the two {@link DateTextField}

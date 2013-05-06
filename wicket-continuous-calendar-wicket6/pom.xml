@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
-  <artifactId>wicket-continuous-calendar-wicket15</artifactId>
+  <artifactId>wicket-continuous-calendar-wicket6</artifactId>
   <version>1.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>jQuery-Continuous-Calendar for Wicket15</name>
-  <description>jQuery-Continuous-Calendar for Wicket 1.5.x.</description>
+  <name>jQuery-Continuous-Calendar for Wicket6</name>
+  <description>jQuery-Continuous-Calendar for Wicket 6.x.</description>
   <parent>
     <groupId>com.googlecode.wicket-continuous-calendar</groupId>
     <artifactId>wicket-continuous-calendar-parent</artifactId>
@@ -47,13 +47,13 @@
     <dependency>
       <groupId>org.apache.wicket</groupId>
       <artifactId>wicket-core</artifactId>
-      <version>${wicket15Version}</version>
+      <version>${wicket6Version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.wicket</groupId>
       <artifactId>wicket-datetime</artifactId>
-      <version>${wicket15Version}</version>
+      <version>${wicket6Version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

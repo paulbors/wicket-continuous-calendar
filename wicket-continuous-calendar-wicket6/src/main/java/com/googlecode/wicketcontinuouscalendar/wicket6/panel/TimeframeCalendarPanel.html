@@ -1,0 +1,34 @@
+<html xmlns:wicket="http://wicket.apache.org">
+    <wicket:head>
+        <!-- custom user specified calendar styles -->
+        <style type="text/css">
+            .continuousCalendarContainer {
+                width: 220px;
+            }
+            .continuousCalendarContainer a.calendarIcon {
+                float: right;
+            }
+            .continuousCalendarContainer .popUpContainer {
+                float: right; left: -220px;
+            }
+            .continuousCalendarContainer div.label span.clickable {
+                display: none; cursor: pointer; text-decoration: none; visibility: hidden;
+            }
+            .continuousCalendarContainer div.label span.clickable:hover {
+                display: none; cursor: pointer; text-decoration: underline;
+            }
+            .continuousCalendarContainer div.label span.rangeLengthLabel {
+                width: 220px; margin-left: -7px; float: right; background-color: white;
+            }
+            .continuousCalendarContainer input.endDate, .continuousCalendarContainer input.startDate {
+                display: inline;
+            }
+        </style>
+    </wicket:head>
+    <wicket:panel>
+        <div wicket:id="continuousCalendar" style="display: block; white-space:nowrap;">
+            <label><wicket:message key="com.googlecode.continuouscalendar.from.label">[From]</wicket:message> <input wicket:id="startDate" class="startDate" type="text" size="10" maxlength="10"/></label>
+            <label><wicket:message key="com.googlecode.continuouscalendar.to.label">[To]</wicket:message> <input wicket:id="endDate" class="endDate" type="text" size="10" maxlength="10"/></label>
+        </div>
+    </wicket:panel>
+</html>

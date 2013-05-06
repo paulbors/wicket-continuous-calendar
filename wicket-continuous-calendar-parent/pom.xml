@@ -36,7 +36,8 @@
     <jacksonVersion>2.0.5</jacksonVersion>
     <javaVersion>1.6</javaVersion>
     <junitVersion>4.10</junitVersion>
-    <wicketVersion>1.5.9</wicketVersion>
+    <wicket15Version>1.5.9</wicket15Version>
+    <wicket6Version>6.7.0</wicket6Version>
   </properties>
   <build>
     <resources>
@@ -116,5 +117,6 @@
   <modules>
     <module>../wicket-continuous-calendar</module>
     <module>../wicket-continuous-calendar-wicket15</module>
+	<module>../wicket-continuous-calendar-wicket6</module>
   </modules>
 </project>
