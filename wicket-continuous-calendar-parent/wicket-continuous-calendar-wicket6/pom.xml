@@ -1,17 +1,15 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
-  <artifactId>wicket-continuous-calendar</artifactId>
+  <artifactId>wicket-continuous-calendar-wicket6</artifactId>
   <version>1.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>Wicket jquery-continuous-calendar abstraction</name>
-  <description>Java abstraction for jQuery-Continuous-Calendar</description>
+  <name>jQuery-Continuous-Calendar for Wicket6</name>
+  <description>jQuery-Continuous-Calendar for Wicket 6.x.</description>
   <parent>
     <groupId>com.googlecode.wicket-continuous-calendar</groupId>
     <artifactId>wicket-continuous-calendar-parent</artifactId>
-	<relativePath>../wicket-continuous-calendar-parent</relativePath>
     <version>1.0.2-SNAPSHOT</version>
   </parent>
   <url>http://Wicket-Continuous-Calendar.GoogleCode.com/</url>
@@ -40,19 +38,20 @@
   </developers>
   <dependencies>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>${jacksonVersion}</version>
+      <groupId>com.googlecode.wicket-continuous-calendar</groupId>
+      <artifactId>wicket-continuous-calendar</artifactId>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>${jacksonVersion}</version>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket-core</artifactId>
+      <version>${wicket6Version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jacksonVersion}</version>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket-datetime</artifactId>
+      <version>${wicket6Version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -64,13 +63,13 @@
   <build>
     <resources>
       <resource>
-        <directory>src/main/java</directory>
+        <directory>src/main/java/</directory>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
       <resource>
-        <directory>src/main/resources</directory>
+        <directory>src/main/resources/</directory>
         <includes>
           <include>**/*</include>
         </includes>

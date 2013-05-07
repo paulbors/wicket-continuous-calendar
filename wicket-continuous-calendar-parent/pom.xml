@@ -121,8 +121,8 @@
     </pluginManagement>
   </build>
   <modules>
-    <module>../wicket-continuous-calendar</module>
-    <module>../wicket-continuous-calendar-wicket15</module>
-	<module>../wicket-continuous-calendar-wicket6</module>
+    <module>wicket-continuous-calendar</module>
+    <module>wicket-continuous-calendar-wicket15</module>
+	<module>wicket-continuous-calendar-wicket6</module>
   </modules>
 </project>
