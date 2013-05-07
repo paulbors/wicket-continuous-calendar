@@ -8,7 +8,7 @@
   </parent>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
   <artifactId>wicket-continuous-calendar-parent</artifactId>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Wicket jquery-continuous-calendar parent</name>
   <description>jQuery-Continuous-Calendar integrated with Wicket</description>
