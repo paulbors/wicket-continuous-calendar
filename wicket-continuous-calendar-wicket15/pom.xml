@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
   <artifactId>wicket-continuous-calendar-wicket15</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>jQuery-Continuous-Calendar for Wicket15</name>
   <description>jQuery-Continuous-Calendar for Wicket 1.5.x.</description>
@@ -12,7 +12,7 @@
     <groupId>com.googlecode.wicket-continuous-calendar</groupId>
     <artifactId>wicket-continuous-calendar-parent</artifactId>
 	<relativePath>../wicket-continuous-calendar-parent</relativePath>
-    <version>1.0.2</version>
+    <version>1.0.2-SNAPSHOT</version>
   </parent>
   <url>http://Wicket-Continuous-Calendar.GoogleCode.com/</url>
   <inceptionYear>2012</inceptionYear>
@@ -42,7 +42,7 @@
     <dependency>
       <groupId>com.googlecode.wicket-continuous-calendar</groupId>
       <artifactId>wicket-continuous-calendar</artifactId>
-      <version>1.0.2</version>
+      <version>1.0.2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.wicket</groupId>
