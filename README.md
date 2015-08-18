@@ -103,12 +103,6 @@ Using the SimpleCalendarPanel will hide the two date text fields and you'll end 
 
 Using the TimeframeCalendarPanel as shown in the above example you'll end up with the two date text fields visible on the page labeled as From and To. You can change those labels using the properties file within your own application. Also, setting it as a pop-up will render the pop-up icon to the right of the two fields as seen in the screenshot on the project's home page.
 
-### Your Framework is not supported?
-If your Java-based framework of choice is not supported by Wicket Continuous Calendar, feel free to get in touch with us. It shouldn't be much work to get the basic features also working for your framework (most of the work has already been done).
-
-### Want to contribute?
-If you're interested in supporting us in developing Wicket Continuous Calendar further, get in touch with us and we'll see how you can contribute.
-
 ### License
 Copyright (C) 2013 Wicket Continuous Calendar (https://github.com/paulbors/wicket-continuous-calendar)
 
