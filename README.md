@@ -82,7 +82,7 @@ Some other easy to integrate OSS Java projects you might be interested in are:
     <table>
         <tr>
             <td><strong>Project Name:</strong></td>
-            <td><a href='https://code.google.com/p/wicked-charts/'>Wicked-Charts</a></td>
+            <td><a href='https://github.com/thombergs/wicked-charts'>Wicked-Charts</a></td>
         </tr>
         <tr>
             <td><strong>Description:</strong></td>
