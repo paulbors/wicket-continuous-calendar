@@ -51,7 +51,7 @@ If you want to use the Java abstraction and JSON serializer of the Wicket Contin
 Wicket Continuous Calendar is a Java abstraction of the jQuery-Continuous-Calendar javascript library. With Wicket Continuous Calendar, you can configure the continuous calendar in Java and display it in any web application based on Apache Wicket. Or you can use the Java abstraction to integrate it in web applications built with other java web frameworks.
 
 ### Continuous-Calendar Demo
-Issue 2 has been created to add a Showcase app for the project. Until then you can check out the jQuery-Continuous-Calendar Playground.
+Issue 2 has been created to add a Showcase app for the project. Until then you can check out the jQuery-Continuous-Calendar Playground at http://reaktor.github.io/jquery-continuous-calendar/site/playground.html.
 
 ### How does it work?
 
