@@ -58,7 +58,7 @@ For a quick start on how to use Wicket Continuous Calendar in your Wicket applic
 If your Java-based framework of choice is not supported by Wicket Continuous Calendar, feel free to get in touch with us. It shouldn't be much work to get the basic features also working for your framework (most of the work has already been done).
 
 ## License ##
-Copyright (C) 2013 Wicket Continuous Calendar (http://Wicket-Continuous-Calendar.GoogleCode.com/)
+Copyright (C) 2013 Wicket Continuous Calendar (https://github.com/paulbors/wicket-continuous-calendar)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
