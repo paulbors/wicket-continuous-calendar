@@ -1,9 +1,9 @@
-# jQuery-Continuous-Calendar integrated in Wicket
+## Wicket jQuery-Continuous-Calendar
 
-## Version 1.0.2 released
+### Version 1.0.2 released
 Added new TimeframeCalendarPanel to show the From and To date text fields by default.
 
-## ChangeLog
+### ChangeLog
 - Basic functionality of the continuous calendar in Wicket 1.5.x and 6.x
     - Calendar icon shows today's date
     - Exclude predefined holidays or blacked-out days
@@ -16,10 +16,10 @@ Added new TimeframeCalendarPanel to show the From and To date text fields by def
 - Ajax friendly form fields
 - Accessibility and internationalization
 
-## Maven coordinates
+### Maven coordinates
 Depending on what web framework you use, add one of the following dependencies to your Maven build:
 
-### Wicket 6.x
+#### Wicket 6.x
 ```xml
 <dependency>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
@@ -28,7 +28,7 @@ Depending on what web framework you use, add one of the following dependencies t
 </dependency>
 ```
 
-### Wicket 1.5.x
+#### Wicket 1.5.x
 ```xml
 <dependency>
   <groupId>com.googlecode.wicket-continuous-calendar</groupId>
@@ -37,7 +37,7 @@ Depending on what web framework you use, add one of the following dependencies t
 </dependency>
 ```
 
-### Plain Java Abstraction
+#### Plain Java Abstraction
 If you want to use the Java abstraction and JSON serializer of the Wicket Continuous Calendar options (for example to add the Continuous Calendar to an application built with a different web framework than Wicket), add the following dependency:
 ```xml
 <dependency>
@@ -47,21 +47,21 @@ If you want to use the Java abstraction and JSON serializer of the Wicket Contin
 </dependency>
 ```
 
-## What is Wicket Continuous Calendar?
+### What is Wicket Continuous Calendar?
 Wicket Continuous Calendar is a Java abstraction of the jQuery-Continuous-Calendar javascript library. With Wicket Continuous Calendar, you can configure the continuous calendar in Java and display it in any web application based on Apache Wicket. Or you can use the Java abstraction to integrate it in web applications built with other java web frameworks.
 
-## Continuous-Calendar Demo
+### Continuous-Calendar Demo
 Issue 2 has been created to add a Showcase app for the project. Until then you can check out the jQuery-Continuous-Calendar Playground.
 
-## How does it work?
+### How does it work?
 
-### General Concept
+#### General Concept
 Wicket Continuous Calendar does not create the calendar itself, but delegates the creation of the calendar to the jQuery-Continuous-Calendar JavaScript library. Wicket Continuous Calendar provides you with two things:
 
 - Java classes to define the settings of the calendar, starting from the Options class
 - Components for Wicket which are able to call jQuery-Continuous-Calendar to display a calendar defined by you
 
-### Defining a Calendar
+#### Defining a Calendar
 To define the contents of a calendar, you simply have to instantiate an ContinuousCalendarOptions object and use its setter methods to define the metadata you want. This ContinuousCalendarOptions object is then passed into a web component that takes care of the rendering.
 
 For details on the effects of each option, please refer to the jQuery-Continuous-Calendar API reference. The naming of the options was adopted from there. If you come across a calendar option that Wicket Continuous Calendar doesn't support yet, please create an issue.
@@ -73,7 +73,7 @@ The following example creates a pop-up calendar displaying the current date with
   options.setFadeOutDuration(500);
 ```
 
-### Adding a Continuous Calendar to your Wicket Page
+#### Adding a Continuous Calendar to your Wicket Page
 First, add the dependency to the current version of wicket-continuous-calendar-wicket15 to your classpath.
 
 To add a calendar to a page in a Wicket application, you need to add a div component to your HTML page, like this:
@@ -104,13 +104,13 @@ Using the SimpleCalendarPanel will hide the two date text fields and you'll end 
 
 Using the TimeframeCalendarPanel as shown in the above example you'll end up with the two date text fields visible on the page labeled as From and To. You can change those labels using the properties file within your own application. Also, setting it as a pop-up will render the pop-up icon to the right of the two fields as seen in the screenshot on the project's home page.
 
-## Your Framework is not supported?
+### Your Framework is not supported?
 If your Java-based framework of choice is not supported by Wicket Continuous Calendar, feel free to get in touch with us. It shouldn't be much work to get the basic features also working for your framework (most of the work has already been done).
 
-## Want to contribute?
+### Want to contribute?
 If you're interested in supporting us in developing Wicket Continuous Calendar further, get in touch with us and we'll see how you can contribute.
 
-## License
+### License
 Copyright (C) 2013 Wicket Continuous Calendar (https://github.com/paulbors/wicket-continuous-calendar)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
@@ -118,7 +118,7 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-## Sugested projects of interest
+### Sugested projects of interest
 Some other easy to integrate OSS Java projects you might be interested in are:
 
 - Wicked-Charts
