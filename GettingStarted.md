@@ -1,12 +1,12 @@
 
 
-# General Concept #
+## General Concept ##
 
 Wicket Continuous Calendar does not create the calendar itself, but delegates the creation of the calendar to the <a href='http://reaktor.github.com/jquery-continuous-calendar'>jQuery-Continuous-Calendar</a> JavaScript library. Wicket Continuous Calendar provides you with two things:
   * Java classes to define the settings of the calendar, starting from the Options class
   * Components for Wicket which are able to call jQuery-Continuous-Calendar to display a calendar defined by you
 
-# Defining a Calendar #
+## Defining a Calendar ##
 
 To define the contents of a calendar, you simply have to instantiate an ContinuousCalendarOptions object and use its setter methods to define the metadata you want. This ContinuousCalendarOptions object is then passed into a web component that takes care of the rendering.
 
@@ -20,7 +20,7 @@ The following example creates a pop-up calendar displaying the current date with
   options.setFadeOutDuration(500);
 ```
 
-# Adding a Continuous Calendar to your Wicket Page #
+## Adding a Continuous Calendar to your Wicket Page ##
 First, add the dependency to the current version of **wicket-continuous-calendar-wicket15** to your classpath.
 
 To add a calendar to a page in a Wicket application, you need to add a div component to your HTML page, like this:
