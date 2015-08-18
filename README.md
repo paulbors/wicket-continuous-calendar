@@ -7,7 +7,7 @@ Wicket Continuous Calendar is a Java abstraction of the <a href='http://reaktor.
 ### Version 1.0.2 released ###
 Added new TimeframeCalendarPanel to show the _From_ and _To_ date text fields by default.
 
-  * Check out the [ChangeLog](../wiki/ChangeLog.md)
+  * Check out the [ChangeLog](ChangeLog.md)
   * Basic functionality of the continuous calendar in Wicket 1.5.x and 6.x
     * Calendar icon shows today's date
     * Exclude predefined holidays or blacked-out days
@@ -52,7 +52,7 @@ If you want to use the Java abstraction and JSON serializer of the Wicket Contin
 A ticket has been created to add a Showcase app for the project. Until then you can check out the <a href='http://reaktor.github.com/jquery-continuous-calendar/site/playground.html'>jQuery-Continuous-Calendar Playground</a>.
 
 ## How does it work? ##
-For a quick start on how to use Wicket Continuous Calendar in your Wicket application, visit the [GettingStarted](../wiki/GettingStarted.md) page.
+For a quick start on how to use Wicket Continuous Calendar in your Wicket application, visit the [GettingStarted](GettingStarted.md) page.
 
 ## Your Framework is not supported? ##
 If your Java-based framework of choice is not supported by Wicket Continuous Calendar, feel free to get in touch with us. It shouldn't be much work to get the basic features also working for your framework (most of the work has already been done).
