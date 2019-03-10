@@ -89,7 +89,7 @@ Some other easy to integrate OSS Java projects you might be interested in are:
             <td>Java abstraction of the <a href='http://www.highcharts.com'>HighCharts</a> javascript library.</td>
         </tr>
         <tr>
-            <td colspan="2"><img src='http://wicked-charts.googlecode.com/files/chart.png' /></td>
+            <td colspan="2"><img src='https://assets.highcharts.com/images/demo-thumbnails/highcharts/pie-donut-default.png' /></td>
         </tr>
         <tr>
             <td colspan="2"><br /></td>
