@@ -2,7 +2,7 @@
 ## Wicket Continuous Calendar ##
 Wicket Continuous Calendar is a Java abstraction of the <a href='http://reaktor.github.com/jquery-continuous-calendar'>jQuery-Continuous-Calendar</a> javascript library. With Wicket Continuous Calendar, you can configure the continuous calendar in Java and display it in any web application based on Apache Wicket. Or you can use the Java abstraction to integrate it in web applications built with other java web frameworks.
 
-![http://wicket-continuous-calendar.googlecode.com/files/Wicket-Continuous-Calendar.png](http://wicket-continuous-calendar.googlecode.com/files/Wicket-Continuous-Calendar.png)
+![http://wicket-continuous-calendar.googlecode.com/files/Wicket-Continuous-Calendar.png](https://camo.githubusercontent.com/a132878cd7bfd28c612f9fe47f4157ae84435fe1/687474703a2f2f636f6e74696e756f757363616c656e6461722e6769746875622e636f6d2f6a71756572792d636f6e74696e756f75732d63616c656e6461722f736974652f63616c656e6461722e706e67)
 
 ### Version 1.0.2 released ###
 Added new TimeframeCalendarPanel to show the _From_ and _To_ date text fields by default.
