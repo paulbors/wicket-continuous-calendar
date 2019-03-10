@@ -103,7 +103,7 @@ Some other easy to integrate OSS Java projects you might be interested in are:
             <td>Dashboard with standard and custom widgets to your wicket application.</td>
         </tr>
         <tr>
-            <td colspan="2"><img src='http://wicket-continuous-calendar.googlecode.com/files/wicket-dashboard.png' /></td>
+            <td colspan="2"><img src='https://github.com/decebals/wicket-dashboard/raw/master/screenshots/wicket-dashboard.png' /></td>
         </tr>
     </table>
 </blockquote>
